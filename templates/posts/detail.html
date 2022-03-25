@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ post.title }}
+{% endblock title %}
+
+{% block content %}
+
+<section>
+            <h1>Details</h1>
+        <div class="row">
+            <div class="column" >
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-pen"></i>
+                    </div>
+                    <h3 class="card-title text-dark">Title: {{ post.title }}</h3>
+                    <p><b> Author: {{ post.Author }}</b></p>
+                    <p class="p-detail">{{post.body}}</p>
+                    <p class="p1-detail">{{ post.created_on }}</p>
+                    <a href="{% url 'post_edit' post.id %}">Edit Post</a> 
+                    <a href="{% url 'post_delete' post.id %}">Delete</a>
+                </div>
+            </div>
+        </div>
+</section>
+
+{% endblock content %}
+
+
