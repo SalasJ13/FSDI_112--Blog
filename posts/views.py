@@ -1,4 +1,3 @@
-from audioop import reverse
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import (
     CreateView,
@@ -28,7 +27,7 @@ class PostCreateView(CreateView):
 class PostUpdateView(UpdateView):
     template_name = "posts/edit.html"
     model = Post
-    fields = ['title', 'author', 'body']
+    fields = ['title', 'body']
 
 
 class PostDeleteView(DeleteView):

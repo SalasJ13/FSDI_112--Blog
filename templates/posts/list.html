@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Posts{% endblock title %}
+{% block title %}Review{% endblock title %}
 
 {% block content %}
 <section>
-        <h1>Posts</h1>
-
+        <h1>Review</h1>
+        {% if user.is_authenticated %}
+        <h1>Do you want to add a new review?<a href="{% url 'post_new' %}"> Click Here!</a></h1>
+        {% else %}
+        <h1>Do you want to add a new review?<a href="{% url 'login' %}"> Login In</a></h1>
+        {% endif %}
         {% for post in post_list %}
     <div class="row">
         <div class="column" >

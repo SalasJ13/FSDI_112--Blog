@@ -38,7 +38,7 @@ h1 {
 }
 p {
   color: #575a7b;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.6;
   letter-spacing: 0.03em;
 }
@@ -111,9 +111,10 @@ p {
 }
 .content .cn a {
   text-decoration: none;
-  color: #f7f7f7;
   transition: 0.3s ease;
+  color: #f7f7f7;
 }
 .cn:hover {
   background-color: #480ca8;
+  color: #f7f7f7;
 }

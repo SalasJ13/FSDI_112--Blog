@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Update Post{% endblock title %}
+{% block title %}Update Review{% endblock title %}
 
 {% block content %}
 
@@ -14,9 +14,11 @@
     
     <div class="form">
         <form method="POST">    
-            <h1>Edit Post</h1>
+            <h1>Edit Review</h1>
             {% csrf_token %}
-            {{ form.as_p}}
+            <div class="f-edit">
+                {{ form.as_p}}
+            </div>
             <!--<button type="submit" class="btn btn-succes" value="Create">-->
             <button type="submit" class="btn btn-succes" value="Edit">Edit</button>
         </form>

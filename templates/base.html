@@ -18,6 +18,8 @@
     <link href="{% static 'css/posts.css' %}" rel="stylesheet">
     <link href="{% static 'css/listPosts.css' %}" rel="stylesheet">
     <link href="{% static 'css/detail.css' %}" rel="stylesheet">
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+    <link href="{% static 'css/logged.css' %}" rel="stylesheet">
 
     <title>{% block title %}{% endblock title %}</title>
 </head>
@@ -30,8 +32,13 @@
                 <div class="menu">
                     <ul>
                         <li><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="{% url 'posts_list' %}">Posts</a></li>
+                        <li><a href="{% url 'posts_list' %}">Review</a></li>
+                        {% if user.is_authenticated %}
                         <li><a href="{% url 'post_new' %}">Create</a></li>
+                        <li><a href="{% url 'logout' %}">LogOut</a></li>
+                        {% else %}
+                        <li><a href="{% url 'login' %}">LogIn</a></li>
+                        {% endif %}
                     </ul>
                 </div>
                 <div class="search">
