@@ -19,7 +19,7 @@
                     <i class="fa-solid fa-pen"></i>
                 </div>
                 <h3 class="card-title text-dark">Title: {{ post.title }}</h3>
-                <p><b> Author: {{ post.Author }}</b></p>
+                <p><b> Author: {{ post.author }}</b></p>
                 <p>{{post.body|truncatechars:50}}</p>
                 <p>{{ post.created_on }}</p>
                 <a href="{% url 'post_detail' post.id %} ">Click here</a>

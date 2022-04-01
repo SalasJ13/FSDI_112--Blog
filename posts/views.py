@@ -1,4 +1,5 @@
 from django.views.generic import ListView, DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic.edit import (
     CreateView,
     UpdateView,
@@ -18,19 +19,27 @@ class PostDetailView(DetailView):
     model = Post
 
 
-class PostCreateView(CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     template_name = "posts/new.html"
     model = Post
-    fields = ['title', 'author', 'body']
+    fields = ['title', 'theme', 'author', 'body']
 
 
-class PostUpdateView(UpdateView):
+class PostUpdateView(LoginRequiredMixin, UpdateView):
     template_name = "posts/edit.html"
     model = Post
-    fields = ['title', 'body']
+    fields = ['title', 'theme', 'body']
+
+    # def test_func(self):
+    #    obj = self.get_object()
+    #    return obj.author == self.request.user
 
 
-class PostDeleteView(DeleteView):
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     template_name = "posts/delete.html"
     model = Post
     success_url = reverse_lazy('posts_list')
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user

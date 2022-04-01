@@ -1,0 +1,73 @@
+/*Formulario para INICIO DE SESION 
+*/
+.body {
+    color: #343a40;
+  }
+  .form-sign{
+    width: 425px;
+    height: 470px;
+    background: linear-gradient(
+      /* #ffffff 98%,
+          #7209b7 2% */ #b185db 50%,
+      #b185db 50%
+    );
+    box-shadow: e 0 35px Orgba (0, 0, 0, 0.12);
+    position: absolute;
+    top: 160px;
+    left: 430px;
+    border: 1px #7209b7;
+    border-radius: 10px;
+    padding: 25px;
+    color: #343a40;
+  }
+  .form-sign h1 {
+    width: 220px;
+    font-family: Verdana;
+    text-align: center;
+    color: #7209b7;
+    font-size: 22px;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 8px;
+  }
+  .form-sign input {
+    width: 240px;
+    height: 35px;
+    background: transparent;
+    border-bottom: 1px solid #7209b7;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: #343a40;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-top: 0px;
+    font-family: Verdana;
+  }
+  .form-sign input:focus {
+    outline: none;
+  }
+  .btn-sign {
+    width: 240px;
+    height: 40px;
+    background: #7209b7;
+    border: none;
+    /*margin-top: 130px;*/
+    position: relative;
+    top: 130px;
+    left: 66px;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.4s ease;
+  }
+  .btn-sign:hover {
+    background-color: #480ca8;
+    color: #fff;
+  }
+  .btn-sign a {
+    text-decoration: none;
+    color: #343a40;
+  }
+  

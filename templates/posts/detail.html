@@ -15,7 +15,8 @@
                         <i class="fa-solid fa-pen"></i>
                     </div>
                     <h3 class="card-title text-dark">Title: {{ post.title }}</h3>
-                    <p><b> Author: {{ post.Author }}</b></p>
+                    <p> <small>Category: {{post.theme}} </small></p>
+                    <p><b> Author: {{ post.author }}</b></p>
                     <p class="p-detail">{{post.body}}</p>
                     <p class="p1-detail">{{ post.created_on }}</p>
                     {% if user.is_authenticated %}
